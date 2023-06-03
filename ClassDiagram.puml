@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package View <<Frame>> {
+    class MainActivity
+    class MainFragment
+}
+
+package ViewModel <<Frame>> {
+    class MainViewModel
+}
+
+package UseCase <<Frame>> {
+    class GetCurrenciesUseCase
+    class GetRatesUseCase
+}
+
+package Repository <<Frame>> {
+    interface ApiLayerRepository
+    class ApiLayerRepositoryImpl extends ApiLayerRepository
+}
+
+package DataSource <<Frame>> {
+    interface LocalDataSource
+    class LocalDataSourceImpl extends LocalDataSource
+    interface RemoteDataSource
+    class RemoteDataSourceImpl extends RemoteDataSource
+}
+
+package Network <<Frame>> {
+    interface ApiLayerService
+}
+
+package DB <<Frame>> {
+    interface CurrencyDao
+    interface RateDao
+}
+
+MainActivity o-- MainFragment
+MainActivity o-- MainViewModel
+MainFragment --> MainViewModel
+MainViewModel o-- GetCurrenciesUseCase
+MainViewModel o-- GetRatesUseCase
+GetCurrenciesUseCase o-- ApiLayerRepository
+GetRatesUseCase o-- ApiLayerRepository
+ApiLayerRepositoryImpl o-- LocalDataSource
+ApiLayerRepositoryImpl o-- RemoteDataSource
+RemoteDataSourceImpl o-- ApiLayerService
+LocalDataSourceImpl o-- CurrencyDao
+LocalDataSourceImpl o-- RateDao
+
+
+
+@enduml
