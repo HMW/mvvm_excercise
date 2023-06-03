@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?android:attr/spinnerItemStyle"
+    android:layout_width="@dimen/spinner_item_width"
+    android:layout_height="@dimen/spinner_item_height"
+    android:gravity="center"
+    android:ellipsize="marquee"
+    android:singleLine="true"
+    android:textColor="@drawable/spinner_item_color_selector"
+    android:textSize="@dimen/spinner_text_size"
+    android:lineSpacingExtra="@dimen/spinner_line_extra"
+    android:layout_margin="@dimen/spinner_item_margin" />

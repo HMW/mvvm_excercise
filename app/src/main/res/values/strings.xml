@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CurrencyExerciseXml</string>
+    <string name="et_input_hint">Enter a number to be convert</string>
+    <string name="et_input_text">1</string>
+    <string name="loading_currencies">Loading for currencies</string>
+    <string name="loading_rates">Loading for rates</string>
+</resources>
